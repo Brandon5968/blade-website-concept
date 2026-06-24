@@ -39,15 +39,31 @@ Company details live in one place: `src/data/site.ts`.
 - **Build output directory:** `dist`
 - **Framework preset:** Astro
 
-## Branding
+## Branding & design rules
 
-- Brand colour is the trucks/uniform green `#8cc63f` (see `src/styles/global.css`).
-- Logo mark in `public/images/logo-mark.png` was cropped from the original site logo.
-- Work photos in `public/images/` were taken from the existing site.
+- Lime `#8cc63f` (logo) is used as an accent only; **forest/olive** green
+  (`green-700/800`) is the primary action colour. One muted **clay** accent is
+  reserved for emergency/urgency.
+- Headings: Barlow Condensed. Body: Inter, near-black, left-aligned, ~68ch.
+- Logo mark (`logo-mark.png`) and AHHA mark (`ahha-mark.png`) were cropped from
+  the original PNGs (both had white text unusable on a light background).
+- Photos in `public/images/` are from the existing site; `ba1-*`/`ba2-*` are the
+  before/after pairs supplied by the owner.
+
+## Key components
+
+- `BeforeAfter.astro` — interactive drag-to-compare slider (CSS clip-path +
+  range input, touch-friendly, lazy-loaded). Add more pairs by reusing it.
+- `Testimonials.astro` — review layout with **placeholder slots only**. No
+  fabricated reviews. Set `googleRating` once a Google profile exists.
+- `Credentials.astro` — trust badges (AHHA, WorkSafe, insured, contractors board).
 
 ## Notes for going live
 
-- The contact form currently uses a `mailto:` fallback. For a real launch,
-  wire it to a form backend (Cloudflare Pages Functions, Formspree, etc.).
-- Add higher-resolution photography (crew, current green vans, before/after sets).
-- Confirm final copy, ABN and accreditation wording with the client.
+- Contact form uses a `mailto:` fallback. For launch, wire to a form backend
+  (Cloudflare Pages Functions, Formspree, etc.).
+- **Verify before publishing:** ABN 62 069 253 872, address 25 Bormar Drive
+  Beaconsfield, and "open 24 hours" are shown as given in the brief.
+- Add higher-res photography (crew, current white/green vans) and real
+  before/after pairs (2 supplied so far; 3–4 ideal).
+- Collect genuine Google reviews, then fill the testimonial slots.

@@ -18,20 +18,21 @@ const isActive = (href: string) =>
     <div class="flex h-16 items-center justify-between gap-4">
       <a href="/" class="flex items-center gap-3">
         <img src="/images/logo-mark.png" alt="" width="44" height="34" class="h-8 w-auto" />
-        <span class="leading-tight">
-          <span class="block font-display text-base font-700 uppercase tracking-tight text-ink-900">Michael O'Connor & Son</span>
-          <span class="block text-[10px] font-600 uppercase tracking-[0.2em] text-green-600">Industries P/L</span>
+        <span class="leading-none">
+          <span class="block font-display text-lg font-700 uppercase tracking-tight text-ink-900">Michael O'Connor &amp; Son</span>
+          <span class="mt-0.5 block text-[10px] font-600 uppercase tracking-[0.22em] text-green-700">Industries P/L</span>
         </span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-1">
+      <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
         {links.map((l) => (
           <a
             href={l.href}
+            aria-current={isActive(l.href) ? "page" : undefined}
             class:list={[
               "px-3.5 py-2 rounded-md text-sm font-600 transition-colors",
               isActive(l.href)
-                ? "text-green-700"
+                ? "text-green-800"
                 : "text-ink-600 hover:text-ink-900 hover:bg-ink-50",
             ]}
           >
@@ -40,16 +41,55 @@ const isActive = (href: string) =>
         ))}
       </nav>
 
-      <a
-        href={site.phoneHref}
-        class="inline-flex items-center gap-2 rounded-md bg-green-600 px-4 py-2 text-sm font-700 text-white shadow-sm transition hover:bg-green-700"
-      >
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1L6.6 10.8Z"/>
-        </svg>
-        <span class="hidden sm:inline">{site.phone}</span>
-        <span class="sm:hidden">Call</span>
-      </a>
+      <div class="flex items-center gap-2">
+        <a
+          href={site.phoneHref}
+          class="inline-flex items-center gap-2 rounded-md bg-green-700 px-4 py-2 text-sm font-700 text-white shadow-sm transition hover:bg-green-800"
+        >
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+          <span class="hidden sm:inline">{site.phone}</span>
+          <span class="sm:hidden">Call</span>
+        </a>
+        <button
+          type="button"
+          id="navToggle"
+          class="grid h-10 w-10 place-items-center rounded-md text-ink-700 hover:bg-ink-50 md:hidden"
+          aria-label="Open menu"
+          aria-controls="mobileNav"
+          aria-expanded="false"
+        >
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </div>
   </div>
+
+  <nav id="mobileNav" aria-label="Mobile" class="hidden border-t border-ink-100 bg-paper md:hidden">
+    <ul class="mx-auto max-w-6xl px-4 sm:px-6 py-2">
+      {links.map((l) => (
+        <li>
+          <a
+            href={l.href}
+            aria-current={isActive(l.href) ? "page" : undefined}
+            class:list={[
+              "block rounded-md px-3 py-3 text-base font-600",
+              isActive(l.href) ? "text-green-800 bg-green-50" : "text-ink-700 hover:bg-ink-50",
+            ]}
+          >
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
 </header>
+
+<script>
+  const btn = document.getElementById("navToggle");
+  const panel = document.getElementById("mobileNav");
+  btn?.addEventListener("click", () => {
+    const open = panel?.classList.toggle("hidden") === false;
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  });
+</script>

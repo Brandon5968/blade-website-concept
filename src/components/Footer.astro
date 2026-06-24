@@ -3,41 +3,43 @@ import { site } from "../data/site";
 const year = 2026;
 ---
 
-<footer class="border-t border-ink-100 bg-paper-soft text-ink-700">
+<footer class="border-t border-ink-200 bg-paper text-ink-700">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14">
     <div class="grid gap-10 md:grid-cols-4">
       <div class="md:col-span-2">
         <div class="flex items-center gap-3">
           <img src="/images/logo-mark.png" alt="" width="44" height="34" class="h-9 w-auto" />
-          <span class="font-display text-lg font-700 uppercase tracking-tight text-ink-900">Michael O'Connor & Son</span>
+          <span class="font-display text-xl font-700 uppercase tracking-tight text-ink-900">Michael O'Connor &amp; Son</span>
         </div>
-        <p class="mt-4 max-w-md text-sm leading-relaxed text-ink-600">
-          We are a family-run, Australian chimney sweeping business that has looked after
-          {site.region}'s homes, kitchens and factories for over 30 years. Whatever you burn,
-          we will keep it clean, safe and running properly.
+        <p class="mt-4 max-w-[60ch] text-sm leading-relaxed text-ink-700">
+          A family-run, Australian chimney sweeping business looking after homes, kitchens and
+          factories since 1990. Domestic and commercial work across Victoria, and industrial work
+          right across Australia.
         </p>
         <div class="mt-5 flex flex-wrap gap-2">
           {site.accreditations.map((a) => (
-            <span class="rounded-full border border-ink-200 bg-paper px-3 py-1 text-xs text-ink-600">{a.split(", ")[0].split(" member")[0]}</span>
+            <span class="rounded-full border border-ink-200 bg-sand px-3 py-1 text-xs text-ink-600">{a.split(", ")[0].split(" member")[0]}</span>
           ))}
         </div>
       </div>
 
       <div>
-        <h3 class="text-xs font-700 uppercase tracking-[0.16em] text-green-700">Explore</h3>
+        <h2 class="font-display text-sm font-700 uppercase tracking-[0.12em] text-green-800">Explore</h2>
         <ul class="mt-4 space-y-2.5 text-sm">
-          <li><a href="/" class="hover:text-green-700 transition-colors">Home</a></li>
-          <li><a href="/services" class="hover:text-green-700 transition-colors">Services</a></li>
-          <li><a href="/weddings" class="hover:text-green-700 transition-colors">Weddings</a></li>
-          <li><a href="/contact" class="hover:text-green-700 transition-colors">Contact</a></li>
+          <li><a href="/" class="hover:text-green-800 transition-colors">Home</a></li>
+          <li><a href="/services" class="hover:text-green-800 transition-colors">Services</a></li>
+          <li><a href="/weddings" class="hover:text-green-800 transition-colors">Weddings</a></li>
+          <li><a href="/contact" class="hover:text-green-800 transition-colors">Contact</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-xs font-700 uppercase tracking-[0.16em] text-green-700">Get in touch</h3>
+        <h2 class="font-display text-sm font-700 uppercase tracking-[0.12em] text-green-800">Get in touch</h2>
         <ul class="mt-4 space-y-2.5 text-sm">
-          <li><a href={site.phoneHref} class="font-600 text-ink-900 hover:text-green-700 transition-colors">{site.phone}</a></li>
-          <li><a href={`mailto:${site.email}`} class="hover:text-green-700 transition-colors break-all">{site.email}</a></li>
+          <li><a href={site.phoneHref} class="font-600 text-ink-900 hover:text-green-800 transition-colors">{site.phone}</a></li>
+          <li><a href={`mailto:${site.email}`} class="hover:text-green-800 transition-colors break-all">{site.email}</a></li>
+          <li class="text-ink-500">Fax {site.fax}</li>
+          <li class="text-ink-500">{site.address}</li>
           <li class="text-ink-500">{site.postal}</li>
           <li class="text-ink-500">{site.hours}</li>
         </ul>
@@ -45,8 +47,8 @@ const year = 2026;
     </div>
 
     <div class="mt-12 border-t border-ink-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-500">
-      <p>Copyright {year} {site.name} Pty Ltd. All rights reserved.</p>
-      <p>Fully insured. Serving {site.region}.</p>
+      <p>Copyright {year} {site.legalName}. ABN {site.abn}.</p>
+      <p>Fully insured. Victoria-wide and Australia-wide industrial.</p>
     </div>
   </div>
 </footer>

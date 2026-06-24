@@ -1,0 +1,55 @@
+---
+// Real reviews only. These are empty placeholder slots until genuine
+// customer quotes are supplied. Do not fabricate testimonials or ratings.
+// To switch on the Google badge, set `googleRating` once a profile exists.
+const googleRating: { score: string; count: number } | null = null;
+
+const slots = [
+  { job: "Domestic wood heater", area: "the Dandenong Ranges" },
+  { job: "Commercial kitchen canopy", area: "Melbourne" },
+  { job: "Industrial exhaust system", area: "regional Victoria" },
+];
+---
+
+<section class="bg-paper border-y border-ink-100">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-2xl">
+        <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-700">What customers say</p>
+        <h2 class="mt-2 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">Trusted across Victoria for three decades</h2>
+        <p class="mt-4 max-w-[64ch] text-ink-700">A long list of homeowners, restaurants and factories have relied on us since 1990. We are gathering their feedback to share here.</p>
+      </div>
+
+      {googleRating && (
+        <a href="#" class="inline-flex items-center gap-3 rounded-xl border border-ink-200 bg-paper px-4 py-3">
+          <span class="font-display text-3xl font-700 text-ink-900">{googleRating.score}</span>
+          <span>
+            <span class="flex text-green-500" aria-hidden="true">★★★★★</span>
+            <span class="text-xs text-ink-500">{googleRating.count} Google reviews</span>
+          </span>
+        </a>
+      )}
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {slots.map((s) => (
+        <figure class="flex flex-col rounded-2xl border border-dashed border-ink-300 bg-sand p-7">
+          <div class="flex gap-1 text-ink-300" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="m12 17.3-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+            ))}
+          </div>
+          <blockquote class="mt-4 flex-1 text-ink-400">
+            <span class="text-sm italic">Customer review to be added here.</span>
+          </blockquote>
+          <figcaption class="mt-5 border-t border-ink-200 pt-4 text-sm">
+            <span class="block font-600 text-ink-500">Verified customer</span>
+            <span class="text-ink-400">{s.job}, {s.area}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <p class="mt-6 text-xs text-ink-400">Review slots shown for layout. Real customer quotes will be added once collected.</p>
+  </div>
+</section>

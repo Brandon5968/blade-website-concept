@@ -4,58 +4,84 @@ import CtaBand from "../components/CtaBand.astro";
 import { site } from "../data/site";
 
 const inclusions = [
-  { t: "A costumed sweep", d: "Top hat, tails and brushes. The real thing, not a fancy dress hire." },
-  { t: "The lucky greeting", d: "A handshake for the groom and the traditional kiss on the cheek for the bride." },
-  { t: "Photos with your guests", d: "Our sweep is happy to pose for those keepsake shots for the album." },
-  { t: "A little keepsake", d: "A small token of good luck for the happy couple to take home." },
+  { t: "A sweep in top hat and tails", d: "A real chimney sweep arrives in traditional dress, brushes and all. Not a fancy-dress hire." },
+  { t: "The lucky greeting", d: "He shakes the groom's hand and gives the bride the customary kiss on the cheek for good luck." },
+  { t: "A personalised scroll", d: "He presents a scroll with a poem featuring the couple's names and the wedding date, to keep." },
+  { t: "A keepsake gift", d: "A small gift for the happy couple to take home and remember the day by." },
 ];
 ---
 
-<Layout title="Wedding Sweeps" description="Book a traditional good luck chimney sweep for your wedding day. Top hat and tails, the lucky kiss and photos with your guests.">
+<Layout title="Wedding Sweeps" description="Book a traditional good-luck chimney sweep for your wedding. A sweep in top hat and tails shakes the groom's hand, kisses the bride, and presents a personalised scroll and gift.">
   <!-- hero -->
-  <section class="bg-paper-soft border-b border-ink-100">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-20">
-      <div class="max-w-2xl animate-fade-up">
-        <span class="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3.5 py-1.5 text-xs font-600 text-green-800">A charming old tradition</span>
-        <h1 class="mt-6 font-display text-4xl font-800 uppercase leading-[1.05] tracking-tight text-ink-900 sm:text-5xl">A sweep at your wedding brings <span class="text-green-600">good luck</span></h1>
-        <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-600">
-          For centuries a chimney sweep has been a sign of good fortune at a wedding. We will send a
-          genuine sweep, in top hat and tails, to shake the groom's hand, kiss the bride and wish your
-          day a lifetime of luck.
-        </p>
-        <a href={site.phoneHref} class="mt-8 inline-flex items-center gap-2 rounded-md bg-green-600 px-6 py-3.5 font-700 text-white shadow-sm transition hover:bg-green-700">
-          Enquire about a wedding sweep
-        </a>
+  <section class="bg-sand border-b border-ink-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 sm:py-20">
+      <div class="grid items-center gap-10 lg:grid-cols-2">
+        <div class="animate-fade-up">
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3.5 py-1.5 text-xs font-600 text-green-800">A charming old tradition</span>
+          <h1 class="mt-6 font-display text-4xl font-700 uppercase leading-[0.95] tracking-tight text-ink-900 sm:text-5xl">A sweep at your wedding brings <span class="text-green-700">good luck</span></h1>
+          <p class="mt-6 max-w-[58ch] text-lg leading-relaxed text-ink-800">
+            For centuries a chimney sweep has been a sign of good fortune at a wedding. We will send a
+            genuine sweep, in top hat and tails, to shake the groom's hand, kiss the bride, and present
+            a scroll and a gift to wish your day a lifetime of luck.
+          </p>
+          <a href={site.phoneHref} class="mt-8 inline-flex items-center gap-2 rounded-md bg-green-700 px-6 py-3.5 font-700 text-white shadow-sm transition hover:bg-green-800">
+            Enquire about a wedding sweep
+          </a>
+        </div>
+
+        <!-- composed panel so the hero fills the frame -->
+        <div class="relative overflow-hidden rounded-2xl bg-green-800 p-8 text-white shadow-xl sm:p-10">
+          <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-green-400/15 blur-2xl"></div>
+          <svg class="relative h-16 w-16 text-green-300" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 18h16M14 18l1-9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2l1 9" />
+            <path d="M10 22h28v3a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2z" />
+            <path d="M8 40h32M14 33l4 7M34 33l-4 7" />
+          </svg>
+          <p class="relative mt-6 font-display text-2xl font-700 uppercase leading-tight tracking-tight">
+            Top hat and tails. A handshake, a kiss, a scroll and a gift.
+          </p>
+          <ul class="relative mt-6 space-y-2.5 text-green-50">
+            <li class="flex items-center gap-2.5"><span class="h-1.5 w-1.5 rounded-full bg-green-300"></span> A real sweep, not a costume hire</li>
+            <li class="flex items-center gap-2.5"><span class="h-1.5 w-1.5 rounded-full bg-green-300"></span> A poem with your names and date</li>
+            <li class="flex items-center gap-2.5"><span class="h-1.5 w-1.5 rounded-full bg-green-300"></span> Photos with you and your guests</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- the story -->
-  <section class="mx-auto max-w-3xl px-4 sm:px-6 py-20 text-center">
-    <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-600">The tradition</p>
-    <h2 class="mt-3 font-display text-3xl font-800 uppercase tracking-tight text-ink-900 sm:text-4xl">Why a sweep means luck</h2>
-    <p class="mt-5 text-lg leading-relaxed text-ink-600">
-      The story goes that a sweep once saved a king from a runaway carriage, and from that day sweeps
-      were seen as bringers of good luck. Meeting one on your wedding day, or having one shake your hand
-      and kiss the bride, is said to bless the marriage with happiness and good fortune. It is a warm
-      touch that your guests will remember.
-    </p>
+  <section class="mx-auto max-w-3xl px-4 sm:px-6 py-20">
+    <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-700">The tradition</p>
+    <h2 class="mt-3 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">Why a sweep means luck</h2>
+    <div class="mt-5 max-w-[68ch] space-y-4 text-lg leading-relaxed text-ink-800">
+      <p>
+        The story goes that a sweep once saved a king from a runaway carriage, and from that day
+        sweeps were seen as bringers of good luck. Meeting one on your wedding day, or having one shake
+        your hand and kiss the bride, is said to bless the marriage with happiness and good fortune.
+      </p>
+      <p>
+        Our sweep makes it personal. He arrives in full traditional dress, greets the couple, poses for
+        photos with your guests, and presents a scroll with a poem featuring your names and your wedding
+        date, along with a small gift. It is a warm touch your guests will remember.
+      </p>
+    </div>
   </section>
 
   <!-- inclusions -->
-  <section class="bg-paper-soft border-y border-ink-100">
+  <section class="bg-paper border-y border-ink-100">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
       <div class="max-w-2xl">
-        <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-600">What is included</p>
-        <h2 class="mt-2 font-display text-3xl font-800 uppercase tracking-tight text-ink-900 sm:text-4xl">Your wedding sweep visit</h2>
+        <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-700">What is included</p>
+        <h2 class="mt-2 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">Your wedding sweep visit</h2>
       </div>
       <div class="mt-12 grid gap-6 sm:grid-cols-2">
-        {inclusions.map((i, idx) => (
-          <div class="flex gap-5 rounded-2xl border border-ink-100 bg-paper p-7">
-            <span class="font-display text-4xl font-800 text-green-300">{`0${idx + 1}`}</span>
+        {inclusions.map((item, idx) => (
+          <div class="flex gap-5 rounded-2xl border border-ink-100 bg-sand p-7">
+            <span class="font-display text-4xl font-700 text-green-300">{`0${idx + 1}`}</span>
             <div>
-              <h3 class="font-display text-xl font-700 text-ink-900">{i.t}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink-600">{i.d}</p>
+              <h3 class="font-display text-xl font-700 uppercase tracking-tight text-ink-900">{item.t}</h3>
+              <p class="mt-2 text-ink-800">{item.d}</p>
             </div>
           </div>
         ))}
