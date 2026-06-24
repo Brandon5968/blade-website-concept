@@ -3,20 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import { site } from "../data/site";
 
 const methods = [
-  { label: "Phone", value: site.phone, href: site.phoneHref, note: "Customer service & bookings", icon: "M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1L6.6 10.8Z" },
+  { label: "Phone", value: site.phone, href: site.phoneHref, note: "Customer service and bookings", icon: "M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1L6.6 10.8Z" },
   { label: "Email", value: site.email, href: `mailto:${site.email}`, note: "We reply within one business day", icon: "M4 6h16v12H4zM4 7l8 6 8-6" },
   { label: "Post", value: site.postal, href: null, note: "Mailing address", icon: "M3 7l9 6 9-6M3 7v10h18V7M3 7l9-4 9 4" },
-  { label: "Fax", value: site.fax, href: null, note: "For documents & orders", icon: "M6 9V3h12v6M6 18h12v3H6zM6 14h12v4H6zM4 9h16v5H4z" },
+  { label: "Fax", value: site.fax, href: null, note: "For documents and orders", icon: "M6 9V3h12v6M6 18h12v3H6zM6 14h12v4H6zM4 9h16v5H4z" },
 ];
 ---
 
-<Layout title="Contact" description={`Contact ${site.name} — phone ${site.phone}, email ${site.email}. Serving ${site.region}, 7 days a week with 24-hour emergency call-out.`}>
-  <section class="bg-soot-950 text-cream">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+<Layout title="Contact" description={`Contact Michael O'Connor & Son Industries. Phone ${site.phone} or email ${site.email}. Serving ${site.region}, open 7 days with 24 hour emergency call-out.`}>
+  <section class="bg-paper-soft border-b border-ink-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <div class="max-w-2xl animate-fade-up">
-        <p class="text-sm font-600 uppercase tracking-[0.16em] text-ember-300">Get in touch</p>
-        <h1 class="mt-3 font-display text-4xl font-600 leading-tight sm:text-5xl">Let's get your flue sorted</h1>
-        <p class="mt-5 text-lg text-soot-200">Booking a sweep, chasing a quote, or got a smoking emergency? Reach us any way you like — {site.hours.toLowerCase()}.</p>
+        <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-600">Get in touch</p>
+        <h1 class="mt-3 font-display text-4xl font-800 uppercase leading-tight tracking-tight text-ink-900 sm:text-5xl">Let's get your flue sorted</h1>
+        <p class="mt-5 text-lg text-ink-600">Booking a sweep, after a quote, or dealing with a smoking emergency? Reach us whichever way suits. We are open 7 days.</p>
       </div>
     </div>
   </section>
@@ -25,68 +25,68 @@ const methods = [
     <!-- contact methods -->
     <div class="lg:col-span-2 space-y-4">
       {methods.map((m) => (
-        <div class="flex items-start gap-4 rounded-2xl border border-soot-200 bg-white p-5">
-          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ember-50 text-ember-600">
+        <div class="flex items-start gap-4 rounded-2xl border border-ink-100 bg-paper p-5">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-green-100 text-green-700">
             <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={m.icon}/></svg>
           </span>
           <div>
-            <div class="text-xs font-600 uppercase tracking-wide text-soot-400">{m.label}</div>
+            <div class="text-xs font-700 uppercase tracking-wide text-ink-400">{m.label}</div>
             {m.href
-              ? <a href={m.href} class="font-display text-lg font-600 text-soot-900 hover:text-ember-600 transition-colors break-all">{m.value}</a>
-              : <div class="font-display text-lg font-600 text-soot-900">{m.value}</div>}
-            <div class="mt-0.5 text-sm text-soot-500">{m.note}</div>
+              ? <a href={m.href} class="font-display text-lg font-700 text-ink-900 hover:text-green-700 transition-colors break-all">{m.value}</a>
+              : <div class="font-display text-lg font-700 text-ink-900">{m.value}</div>}
+            <div class="mt-0.5 text-sm text-ink-500">{m.note}</div>
           </div>
         </div>
       ))}
 
-      <div class="rounded-2xl bg-ember-600 p-6 text-cream">
-        <div class="flex items-center gap-2 font-600">
+      <div class="rounded-2xl bg-green-700 p-6 text-white">
+        <div class="flex items-center gap-2 font-700">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/></svg>
-          24-hour emergency
+          24 hour emergency
         </div>
-        <p class="mt-2 text-sm text-ember-50/90">Blocked flue or smoke where it shouldn't be? Call {site.phone} any time — day or night.</p>
+        <p class="mt-2 text-sm text-green-50/90">Blocked flue or smoke where it should not be? Call {site.phone} any time, day or night.</p>
       </div>
     </div>
 
     <!-- form -->
     <div class="lg:col-span-3">
-      <div class="rounded-3xl border border-soot-200 bg-white p-7 sm:p-9 shadow-sm">
-        <h2 class="font-display text-2xl font-600 text-soot-900">Request a quote or booking</h2>
-        <p class="mt-2 text-sm text-soot-500">Tell us a little about the job and we'll get back to you, usually the same day.</p>
+      <div class="rounded-2xl border border-ink-100 bg-paper p-7 sm:p-9 shadow-sm">
+        <h2 class="font-display text-2xl font-700 text-ink-900">Request a quote or booking</h2>
+        <p class="mt-2 text-sm text-ink-500">Tell us a bit about the job and we will get back to you, usually the same day.</p>
 
         <form class="mt-7 grid gap-5 sm:grid-cols-2" action={`mailto:${site.email}`} method="post" enctype="text/plain">
           <div class="sm:col-span-1">
-            <label for="name" class="block text-sm font-500 text-soot-700">Name</label>
-            <input id="name" name="name" type="text" required class="mt-1.5 w-full rounded-lg border border-soot-200 bg-cream px-3.5 py-2.5 text-soot-900 outline-none transition focus:border-ember-500 focus:ring-2 focus:ring-ember-500/20" placeholder="Your name" />
+            <label for="name" class="block text-sm font-600 text-ink-700">Name</label>
+            <input id="name" name="name" type="text" required class="mt-1.5 w-full rounded-lg border border-ink-200 bg-paper-soft px-3.5 py-2.5 text-ink-900 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20" placeholder="Your name" />
           </div>
           <div class="sm:col-span-1">
-            <label for="phone" class="block text-sm font-500 text-soot-700">Phone</label>
-            <input id="phone" name="phone" type="tel" class="mt-1.5 w-full rounded-lg border border-soot-200 bg-cream px-3.5 py-2.5 text-soot-900 outline-none transition focus:border-ember-500 focus:ring-2 focus:ring-ember-500/20" placeholder="04xx xxx xxx" />
+            <label for="phone" class="block text-sm font-600 text-ink-700">Phone</label>
+            <input id="phone" name="phone" type="tel" class="mt-1.5 w-full rounded-lg border border-ink-200 bg-paper-soft px-3.5 py-2.5 text-ink-900 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20" placeholder="04xx xxx xxx" />
           </div>
           <div class="sm:col-span-2">
-            <label for="email" class="block text-sm font-500 text-soot-700">Email</label>
-            <input id="email" name="email" type="email" required class="mt-1.5 w-full rounded-lg border border-soot-200 bg-cream px-3.5 py-2.5 text-soot-900 outline-none transition focus:border-ember-500 focus:ring-2 focus:ring-ember-500/20" placeholder="you@example.com" />
+            <label for="email" class="block text-sm font-600 text-ink-700">Email</label>
+            <input id="email" name="email" type="email" required class="mt-1.5 w-full rounded-lg border border-ink-200 bg-paper-soft px-3.5 py-2.5 text-ink-900 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20" placeholder="you@example.com" />
           </div>
           <div class="sm:col-span-2">
-            <label for="service" class="block text-sm font-500 text-soot-700">Type of job</label>
-            <select id="service" name="service" class="mt-1.5 w-full rounded-lg border border-soot-200 bg-cream px-3.5 py-2.5 text-soot-900 outline-none transition focus:border-ember-500 focus:ring-2 focus:ring-ember-500/20">
-              <option>Domestic — wood heater / fireplace</option>
-              <option>Commercial — kitchen canopy / oven</option>
-              <option>Industrial — exhaust / ductwork</option>
+            <label for="service" class="block text-sm font-600 text-ink-700">Type of job</label>
+            <select id="service" name="service" class="mt-1.5 w-full rounded-lg border border-ink-200 bg-paper-soft px-3.5 py-2.5 text-ink-900 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20">
+              <option>Domestic, wood heater or fireplace</option>
+              <option>Commercial, kitchen canopy or oven</option>
+              <option>Industrial, exhaust or ductwork</option>
               <option>Wedding sweep</option>
               <option>Something else</option>
             </select>
           </div>
           <div class="sm:col-span-2">
-            <label for="message" class="block text-sm font-500 text-soot-700">Details</label>
-            <textarea id="message" name="message" rows="4" class="mt-1.5 w-full rounded-lg border border-soot-200 bg-cream px-3.5 py-2.5 text-soot-900 outline-none transition focus:border-ember-500 focus:ring-2 focus:ring-ember-500/20" placeholder="Suburb, type of fire/system, and anything we should know..."></textarea>
+            <label for="message" class="block text-sm font-600 text-ink-700">Details</label>
+            <textarea id="message" name="message" rows="4" class="mt-1.5 w-full rounded-lg border border-ink-200 bg-paper-soft px-3.5 py-2.5 text-ink-900 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-500/20" placeholder="Your suburb, the type of fire or system, and anything else we should know"></textarea>
           </div>
           <div class="sm:col-span-2">
-            <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ember-500 px-6 py-3.5 font-600 text-soot-950 shadow-lg shadow-ember-900/20 transition hover:bg-ember-400 sm:w-auto">
+            <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-green-600 px-6 py-3.5 font-700 text-white shadow-sm transition hover:bg-green-700 sm:w-auto">
               Send enquiry
               <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
-            <p class="mt-3 text-xs text-soot-400">Prefer to talk? Call us on <a href={site.phoneHref} class="font-600 text-ember-600">{site.phone}</a>.</p>
+            <p class="mt-3 text-xs text-ink-400">Prefer to talk? Call us on <a href={site.phoneHref} class="font-600 text-green-700">{site.phone}</a>.</p>
           </div>
         </form>
       </div>

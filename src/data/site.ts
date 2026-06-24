@@ -1,7 +1,7 @@
-// Single source of truth for company details (pulled from the live site).
+// Single source of truth for company details (from the existing site).
 export const site = {
   name: "Michael O'Connor & Son Industries",
-  shortName: "O'Connor Chimney Sweeps",
+  shortName: "Michael O'Connor & Son",
   tagline: "Industrial, Commercial & Domestic Chimney Sweeps",
   established: 1990,
   yearsExperience: "30+",
@@ -10,11 +10,11 @@ export const site = {
   fax: "(03) 5940 8326",
   email: "info@chimneysweeps.com.au",
   postal: "PO Box 258, Beaconsfield VIC 3807",
-  region: "Melbourne & Victoria-wide",
-  hours: "7 days a week · 24-hour emergency call-out",
+  region: "Melbourne and Victoria",
+  hours: "Open 7 days, with 24 hour emergency call-out",
   accreditations: [
-    "Australian Home Heating Association (AHHA) member",
-    "WorkSafe Victoria — Confined Spaces Code of Practice certified",
-    "Fully insured & safety-trained crews",
+    "Australian Home Heating Association member",
+    "WorkSafe Victoria confined spaces certified",
+    "Fully insured, with safety-trained crews",
   ],
 } as const;

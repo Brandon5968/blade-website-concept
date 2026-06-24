@@ -1,34 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-display: "Barlow", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand palette — soot, ember, cream */
-  --color-soot-50: #f6f6f5;
-  --color-soot-100: #e7e7e4;
-  --color-soot-200: #cfcfc9;
-  --color-soot-300: #adada4;
-  --color-soot-400: #84847a;
-  --color-soot-500: #696960;
-  --color-soot-600: #53534c;
-  --color-soot-700: #44443f;
-  --color-soot-800: #2c2c29;
-  --color-soot-900: #1c1c1a;
-  --color-soot-950: #121211;
+  /* Brand green (#8cc63f), the colour on the trucks and uniforms */
+  --color-green-50: #f4f9ec;
+  --color-green-100: #e5f2cf;
+  --color-green-200: #cce8a3;
+  --color-green-300: #aedb6c;
+  --color-green-400: #8cc63f;
+  --color-green-500: #74ad2a;
+  --color-green-600: #588a1e;
+  --color-green-700: #45691d;
+  --color-green-800: #39541d;
+  --color-green-900: #31471c;
+  --color-green-950: #18260b;
 
-  --color-ember-50: #fdf5ed;
-  --color-ember-100: #f9e6d2;
-  --color-ember-200: #f2caa0;
-  --color-ember-300: #eaa869;
-  --color-ember-400: #e48a40;
-  --color-ember-500: #dd6f24;
-  --color-ember-600: #c5561c;
-  --color-ember-700: #a4401a;
-  --color-ember-800: #84341c;
-  --color-ember-900: #6c2c1a;
+  /* Neutral ink / surfaces */
+  --color-ink-50: #f6f7f4;
+  --color-ink-100: #eceee8;
+  --color-ink-200: #d8dccf;
+  --color-ink-300: #b3bba6;
+  --color-ink-400: #828c72;
+  --color-ink-500: #626b54;
+  --color-ink-600: #4c5341;
+  --color-ink-700: #3d4235;
+  --color-ink-800: #2c2f26;
+  --color-ink-900: #1f221b;
 
-  --color-cream: #faf6ef;
+  --color-paper: #ffffff;
+  --color-paper-soft: #f7f8f4;
 }
 
 html {
@@ -36,13 +38,12 @@ html {
 }
 
 body {
-  background-color: var(--color-cream);
-  color: var(--color-soot-800);
+  background-color: var(--color-paper);
+  color: var(--color-ink-800);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
-/* subtle reveal on scroll */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }

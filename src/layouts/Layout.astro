@@ -11,10 +11,10 @@ interface Props {
 
 const {
   title = site.name,
-  description = `${site.tagline}. ${site.yearsExperience} years keeping Victorian homes and businesses safe. 24-hour emergency call-out — phone ${site.phone}.`,
+  description = `${site.tagline}. Over 30 years keeping Victorian homes and businesses safe. ${site.hours}. Call ${site.phone}.`,
 } = Astro.props;
 
-const fullTitle = title === site.name ? title : `${title} — ${site.shortName}`;
+const fullTitle = title === site.name ? title : `${title} | ${site.shortName}`;
 ---
 
 <!doctype html>
@@ -27,21 +27,19 @@ const fullTitle = title === site.name ? title : `${title} — ${site.shortName}`
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={site.name} />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col bg-paper">
     <Header />
     <main class="flex-1">
       <slot />

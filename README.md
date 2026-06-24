@@ -39,9 +39,15 @@ Company details live in one place: `src/data/site.ts`.
 - **Build output directory:** `dist`
 - **Framework preset:** Astro
 
+## Branding
+
+- Brand colour is the trucks/uniform green `#8cc63f` (see `src/styles/global.css`).
+- Logo mark in `public/images/logo-mark.png` was cropped from the original site logo.
+- Work photos in `public/images/` were taken from the existing site.
+
 ## Notes for going live
 
 - The contact form currently uses a `mailto:` fallback. For a real launch,
   wire it to a form backend (Cloudflare Pages Functions, Formspree, etc.).
-- Swap in real photography (before/after galleries, crew, vans).
+- Add higher-resolution photography (crew, current green vans, before/after sets).
 - Confirm final copy, ABN and accreditation wording with the client.

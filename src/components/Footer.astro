@@ -3,53 +3,50 @@ import { site } from "../data/site";
 const year = 2026;
 ---
 
-<footer class="bg-soot-950 text-soot-300">
+<footer class="border-t border-ink-100 bg-paper-soft text-ink-700">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14">
     <div class="grid gap-10 md:grid-cols-4">
       <div class="md:col-span-2">
-        <div class="flex items-center gap-2.5">
-          <span class="grid h-9 w-9 place-items-center rounded-lg bg-ember-500 text-soot-950">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 21V8l4-3 4 3v3h6v10" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <span class="font-display text-lg font-600 text-cream">{site.name}</span>
+        <div class="flex items-center gap-3">
+          <img src="/images/logo-mark.png" alt="" width="44" height="34" class="h-9 w-auto" />
+          <span class="font-display text-lg font-700 uppercase tracking-tight text-ink-900">Michael O'Connor & Son</span>
         </div>
-        <p class="mt-4 max-w-md text-sm leading-relaxed text-soot-400">
-          {site.tagline}. Proudly Australian and family-run for {site.yearsExperience} years —
-          keeping {site.region}'s homes, kitchens and industrial plants safe, clean and compliant.
+        <p class="mt-4 max-w-md text-sm leading-relaxed text-ink-600">
+          We are a family-run, Australian chimney sweeping business that has looked after
+          {site.region}'s homes, kitchens and factories for over 30 years. Whatever you burn,
+          we will keep it clean, safe and running properly.
         </p>
         <div class="mt-5 flex flex-wrap gap-2">
           {site.accreditations.map((a) => (
-            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-soot-200">{a.split(" — ")[0].split(" (")[0]}</span>
+            <span class="rounded-full border border-ink-200 bg-paper px-3 py-1 text-xs text-ink-600">{a.split(", ")[0].split(" member")[0]}</span>
           ))}
         </div>
       </div>
 
       <div>
-        <h3 class="text-xs font-600 uppercase tracking-[0.16em] text-ember-300">Explore</h3>
+        <h3 class="text-xs font-700 uppercase tracking-[0.16em] text-green-700">Explore</h3>
         <ul class="mt-4 space-y-2.5 text-sm">
-          <li><a href="/" class="hover:text-cream transition-colors">Home</a></li>
-          <li><a href="/services" class="hover:text-cream transition-colors">Services</a></li>
-          <li><a href="/weddings" class="hover:text-cream transition-colors">Weddings</a></li>
-          <li><a href="/contact" class="hover:text-cream transition-colors">Contact</a></li>
+          <li><a href="/" class="hover:text-green-700 transition-colors">Home</a></li>
+          <li><a href="/services" class="hover:text-green-700 transition-colors">Services</a></li>
+          <li><a href="/weddings" class="hover:text-green-700 transition-colors">Weddings</a></li>
+          <li><a href="/contact" class="hover:text-green-700 transition-colors">Contact</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="text-xs font-600 uppercase tracking-[0.16em] text-ember-300">Get in touch</h3>
+        <h3 class="text-xs font-700 uppercase tracking-[0.16em] text-green-700">Get in touch</h3>
         <ul class="mt-4 space-y-2.5 text-sm">
-          <li><a href={site.phoneHref} class="hover:text-cream transition-colors">{site.phone}</a></li>
-          <li><a href={`mailto:${site.email}`} class="hover:text-cream transition-colors break-all">{site.email}</a></li>
-          <li class="text-soot-400">{site.postal}</li>
-          <li class="text-soot-400">{site.hours}</li>
+          <li><a href={site.phoneHref} class="font-600 text-ink-900 hover:text-green-700 transition-colors">{site.phone}</a></li>
+          <li><a href={`mailto:${site.email}`} class="hover:text-green-700 transition-colors break-all">{site.email}</a></li>
+          <li class="text-ink-500">{site.postal}</li>
+          <li class="text-ink-500">{site.hours}</li>
         </ul>
       </div>
     </div>
 
-    <div class="mt-12 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-soot-500">
-      <p>© {year} {site.name} Pty Ltd. All rights reserved.</p>
-      <p>ABN-registered · Fully insured · {site.region}</p>
+    <div class="mt-12 border-t border-ink-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-500">
+      <p>Copyright {year} {site.name} Pty Ltd. All rights reserved.</p>
+      <p>Fully insured. Serving {site.region}.</p>
     </div>
   </div>
 </footer>
