@@ -3,26 +3,32 @@ import Layout from "../layouts/Layout.astro";
 import CtaBand from "../components/CtaBand.astro";
 import { site } from "../data/site";
 
+const photos = [
+  { src: "/images/wedding-1.jpg", alt: "Chimney sweep greeting the bride and groom at a wedding" },
+  { src: "/images/wedding-2.jpg", alt: "Chimney sweep with the bride and groom on their wedding day" },
+  { src: "/images/wedding-3.jpg", alt: "Chimney sweep posing with a married couple outside the church" },
+];
+
 const inclusions = [
-  { t: "A sweep in top hat and tails", d: "A real chimney sweep arrives in traditional dress, brushes and all. Not a fancy-dress hire." },
-  { t: "The lucky greeting", d: "He shakes the groom's hand and gives the bride the customary kiss on the cheek for good luck." },
-  { t: "A personalised scroll", d: "He presents a scroll with a poem featuring the couple's names and the wedding date, to keep." },
-  { t: "A keepsake gift", d: "A small gift for the happy couple to take home and remember the day by." },
+  { t: "A real sweep in traditional dress", d: "A genuine working sweep, dressed in traditional 18th century style with brushes and top hat. Not a fancy-dress hire." },
+  { t: "The lucky greeting", d: "He shakes the groom's hand and gives the bride the customary kiss, passing on the sweep's luck, health and happiness." },
+  { t: "At the church or reception", d: "He meets you wherever suits, mingles with your guests, and is happy to pose for photos for the album." },
+  { t: "A scroll and a gift", d: "He presents a gift and a scroll with a poem featuring your names and the date of your wedding, to keep." },
 ];
 ---
 
-<Layout title="Wedding Sweeps" description="Book a traditional good-luck chimney sweep for your wedding. A sweep in top hat and tails shakes the groom's hand, kisses the bride, and presents a personalised scroll and gift.">
+<Layout title="Wedding Sweeps" description="Carry on a 400 year old good-luck tradition. A real chimney sweep in traditional 18th century dress attends your wedding, greets the couple, and presents a scroll and gift.">
   <!-- hero -->
   <section class="bg-sand border-b border-ink-100">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-14 sm:py-20">
       <div class="grid items-center gap-10 lg:grid-cols-2">
         <div class="animate-fade-up">
-          <span class="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3.5 py-1.5 text-xs font-600 text-green-800">A charming old tradition</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3.5 py-1.5 text-xs font-600 text-green-800">A 400 year old good-luck tradition</span>
           <h1 class="mt-6 font-display text-4xl font-700 uppercase leading-[0.95] tracking-tight text-ink-900 sm:text-5xl">A sweep at your wedding brings <span class="text-green-700">good luck</span></h1>
           <p class="mt-6 max-w-[58ch] text-lg leading-relaxed text-ink-800">
-            For centuries a chimney sweep has been a sign of good fortune at a wedding. We will send a
-            genuine sweep, in top hat and tails, to shake the groom's hand, kiss the bride, and present
-            a scroll and a gift to wish your day a lifetime of luck.
+            For 400 years a chimney sweep at a wedding has been a sign of good fortune. We will send a
+            genuine sweep, dressed in traditional 18th century style, to greet the couple and pass on
+            the sweep's luck, health and happiness, along with a scroll and a gift.
           </p>
           <a href={site.phoneHref} class="mt-8 inline-flex items-center gap-2 rounded-md bg-green-700 px-6 py-3.5 font-700 text-white shadow-sm transition hover:bg-green-800">
             Enquire about a wedding sweep
@@ -50,42 +56,61 @@ const inclusions = [
     </div>
   </section>
 
-  <!-- the story -->
+  <!-- the legend -->
   <section class="mx-auto max-w-3xl px-4 sm:px-6 py-20">
     <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-700">The tradition</p>
-    <h2 class="mt-3 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">Why a sweep means luck</h2>
+    <h2 class="mt-3 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">A 400 year old legend</h2>
     <div class="mt-5 max-w-[68ch] space-y-4 text-lg leading-relaxed text-ink-800">
       <p>
-        The story goes that a sweep once saved a king from a runaway carriage, and from that day
-        sweeps were seen as bringers of good luck. Meeting one on your wedding day, or having one shake
-        your hand and kiss the bride, is said to bless the marriage with happiness and good fortune.
+        Four hundred years ago, so the legend goes, a chimney sweep saved the life of a King. The King
+        was so grateful that he invited the sweep to attend the wedding of his daughter. The sweep was
+        introduced to the princess, who greeted him warmly, and when he shook the groom's hand and
+        kissed the bride it was seen as passing on good luck.
       </p>
       <p>
-        Our sweep makes it personal. He arrives in full traditional dress, greets the couple, poses for
-        photos with your guests, and presents a scroll with a poem featuring your names and your wedding
-        date, along with a small gift. It is a warm touch your guests will remember.
+        After that, chimney sweeps became a popular sight at weddings, and royalty have had a sweep
+        attend ever since. Our professional sweeps help you carry on this European tradition. Dressed
+        in traditional 18th century style, the sweep greets you at the church or reception, poses for
+        photos with your guests, and presents a gift and a scroll with a poem featuring your names and
+        your wedding date. You can be assured the sweep who attends will be a real sweep.
       </p>
     </div>
   </section>
 
-  <!-- inclusions -->
+  <!-- real wedding photos (small, native resolution) -->
   <section class="bg-paper border-y border-ink-100">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
       <div class="max-w-2xl">
-        <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-700">What is included</p>
-        <h2 class="mt-2 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">Your wedding sweep visit</h2>
+        <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-700">Real weddings</p>
+        <h2 class="mt-2 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">Our sweep on the big day</h2>
       </div>
-      <div class="mt-12 grid gap-6 sm:grid-cols-2">
-        {inclusions.map((item, idx) => (
-          <div class="flex gap-5 rounded-2xl border border-ink-100 bg-sand p-7">
-            <span class="font-display text-4xl font-700 text-green-300">{`0${idx + 1}`}</span>
-            <div>
-              <h3 class="font-display text-xl font-700 uppercase tracking-tight text-ink-900">{item.t}</h3>
-              <p class="mt-2 text-ink-800">{item.d}</p>
-            </div>
-          </div>
+      <div class="mt-10 flex flex-wrap justify-center gap-6 sm:justify-start">
+        {photos.map((p) => (
+          <figure class="rotate-[-1deg] rounded-md bg-white p-2 shadow-md ring-1 ring-ink-100 odd:rotate-[1.5deg]">
+            <img src={p.src} alt={p.alt} width="160" height="200" loading="lazy" class="h-50 w-40 rounded-sm object-cover" />
+          </figure>
         ))}
       </div>
+      <p class="mt-6 text-xs text-ink-400">Photos from real Victorian weddings. Higher-resolution images to come.</p>
+    </div>
+  </section>
+
+  <!-- inclusions -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+    <div class="max-w-2xl">
+      <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-700">What is included</p>
+      <h2 class="mt-2 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">Your wedding sweep visit</h2>
+    </div>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2">
+      {inclusions.map((item, idx) => (
+        <div class="flex gap-5 rounded-2xl border border-ink-100 bg-sand p-7">
+          <span class="font-display text-4xl font-700 text-green-300">{`0${idx + 1}`}</span>
+          <div>
+            <h3 class="font-display text-xl font-700 uppercase tracking-tight text-ink-900">{item.t}</h3>
+            <p class="mt-2 text-ink-800">{item.d}</p>
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 

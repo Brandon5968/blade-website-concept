@@ -11,7 +11,6 @@ export const site = {
   phoneHref: "tel:1300651631",
   fax: "(03) 5940 8326",
   email: "info@chimneysweeps.com.au",
-  address: "25 Bormar Drive, Beaconsfield VIC 3807",
   postal: "PO Box 258, Beaconsfield VIC 3807",
   hours: "Open 24 hours, 7 days",
   emergency: "24 hour emergency call-out",
