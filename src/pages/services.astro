@@ -1,0 +1,113 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { site } from "../data/site";
+
+const divisions = [
+  {
+    id: "industrial",
+    name: "Industrial Division",
+    lead: "Heavy-duty exhaust and process cleaning that keeps your plant compliant and running.",
+    body: "We service stenters, large-scale exhaust systems, process ovens and the associated ductwork that keeps industrial sites moving. Our crews are WorkSafe confined-space certified and equipped for the toughest, dirtiest jobs — with clear reporting you can hand straight to your compliance file.",
+    items: [
+      "Industrial exhaust & extraction systems",
+      "Stenter & process oven lines",
+      "Large-scale ductwork & flues",
+      "Confined-space entry & cleaning",
+      "Scheduled maintenance programs",
+    ],
+  },
+  {
+    id: "commercial",
+    name: "Commercial Division",
+    lead: "Fire-safe kitchens and ovens, cleaned with minimal downtime to your business.",
+    body: "Grease build-up in kitchen canopies and flues is one of the biggest fire risks in any commercial kitchen. We clean pizza ovens, bakery ovens, canopies and exhaust ducting to fire-safety standard — and provide the documentation your insurer and council expect.",
+    items: [
+      "Commercial kitchen canopy cleaning",
+      "Exhaust flue & ducting degrease",
+      "Pizza, bakery & wood-fired ovens",
+      "Fire-compliance reporting",
+      "After-hours scheduling available",
+    ],
+  },
+  {
+    id: "domestic",
+    name: "Domestic Division",
+    lead: "Clean, safe home heating without the mess.",
+    body: "A swept chimney is a safe chimney. We clean wood heaters, open fireplaces and flex-duct heating systems — protecting your family from soot build-up, blockages and chimney fires. Drop sheets down, dust contained, and a quick safety check every visit.",
+    items: [
+      "Wood heaters & combustion fires",
+      "Open fireplaces & masonry flues",
+      "Flex-duct heating cleaning",
+      "Cowl, cap & flue inspections",
+      "No-mess, tidy service guarantee",
+    ],
+  },
+];
+---
+
+<Layout title="Services" description="Industrial, commercial and domestic chimney sweeping across Victoria — exhaust systems, kitchen canopies, wood heaters and more. Fully certified and insured.">
+  <!-- header -->
+  <section class="bg-soot-950 text-cream">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+      <div class="max-w-2xl animate-fade-up">
+        <p class="text-sm font-600 uppercase tracking-[0.16em] text-ember-300">Our services</p>
+        <h1 class="mt-3 font-display text-4xl font-600 leading-tight sm:text-5xl">Sweeping done properly — at every scale</h1>
+        <p class="mt-5 text-lg text-soot-200">From a single home fireplace to an entire industrial exhaust line, {site.name} cleans, inspects and certifies it all. {site.hours}.</p>
+      </div>
+      <div class="mt-10 flex flex-wrap gap-3">
+        {divisions.map((d) => (
+          <a href={`#${d.id}`} class="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-500 text-soot-100 transition hover:bg-white/10">{d.name}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- division detail -->
+  {divisions.map((d, i) => (
+    <section id={d.id} class:list={["scroll-mt-20", i % 2 === 1 ? "bg-white border-y border-soot-200" : ""]}>
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16 grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div class:list={[i % 2 === 1 ? "lg:order-2" : ""]}>
+          <span class="inline-block rounded-full bg-ember-100 px-3 py-1 text-xs font-600 uppercase tracking-wide text-ember-700">{`0${i + 1}`} · Division</span>
+          <h2 class="mt-4 font-display text-3xl font-600 text-soot-900 sm:text-4xl">{d.name}</h2>
+          <p class="mt-3 text-lg font-500 text-ember-700">{d.lead}</p>
+          <p class="mt-4 leading-relaxed text-soot-600">{d.body}</p>
+          <a href={site.phoneHref} class="mt-7 inline-flex items-center gap-2 rounded-full bg-soot-900 px-5 py-3 text-sm font-600 text-cream transition hover:bg-soot-800">
+            Book this service
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class:list={[i % 2 === 1 ? "lg:order-1" : ""]}>
+          <ul class="grid gap-3 rounded-2xl border border-soot-200 bg-cream p-7">
+            {d.items.map((it) => (
+              <li class="flex items-center gap-3 text-soot-800">
+                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-ember-500 text-soot-950">
+                  <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                {it}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- accreditations -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+    <div class="rounded-3xl bg-soot-900 px-6 py-12 sm:px-12 text-cream">
+      <h2 class="font-display text-2xl font-600 sm:text-3xl">Certified, insured and by the book</h2>
+      <p class="mt-3 max-w-2xl text-soot-300">Every job — domestic to industrial — is carried out to the relevant safety standards by trained, certified crews.</p>
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        {site.accreditations.map((a) => (
+          <div class="rounded-xl border border-white/10 bg-white/5 p-5">
+            <svg class="h-6 w-6 text-ember-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z"/></svg>
+            <p class="mt-3 text-sm font-500 text-soot-100">{a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand heading="Not sure which division you need?" sub="Give us a call and we'll point you to the right team — domestic heater, commercial kitchen or industrial line." />
+</Layout>

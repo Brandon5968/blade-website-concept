@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { site } from "../data/site";
+
+const inclusions = [
+  { t: "A traditional costumed sweep", d: "Top hat, tails and brushes — the genuine article, not a fancy-dress hire." },
+  { t: "The lucky greeting", d: "A handshake for the groom and the customary kiss on the cheek for the bride." },
+  { t: "Photos with your guests", d: "Our sweep happily poses for those keepsake wedding-album shots." },
+  { t: "A keepsake to take home", d: "A small token of good fortune for the happy couple to keep." },
+];
+---
+
+<Layout title="Wedding Sweeps" description="Book a traditional good-luck chimney sweep for your wedding day. Top hat and tails, the lucky kiss, and photos with your guests — a charming Victorian tradition.">
+  <!-- hero -->
+  <section class="relative overflow-hidden bg-soot-950 text-cream">
+    <div class="absolute inset-0 opacity-[0.08]" style="background-image: radial-gradient(circle at 75% 30%, #dd6f24 0, transparent 45%);"></div>
+    <div class="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 sm:py-24">
+      <div class="max-w-2xl animate-fade-up">
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-500 tracking-wide text-ember-200">A charming old tradition</span>
+        <h1 class="mt-6 font-display text-4xl font-600 leading-[1.05] sm:text-6xl">A sweep at your wedding brings <span class="text-ember-400">good luck</span></h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-soot-200">
+          For centuries a chimney sweep has been a symbol of good fortune at a wedding. We'll send a genuine sweep — top hat, tails and all — to shake the groom's hand, kiss the bride and wish your day a lifetime of luck.
+        </p>
+        <a href={site.phoneHref} class="mt-8 inline-flex items-center gap-2 rounded-full bg-ember-500 px-6 py-3.5 font-600 text-soot-950 shadow-lg shadow-ember-900/30 transition hover:bg-ember-400">
+          Enquire about a wedding sweep
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- the story -->
+  <section class="mx-auto max-w-3xl px-4 sm:px-6 py-20 text-center">
+    <p class="text-sm font-600 uppercase tracking-[0.16em] text-ember-600">The tradition</p>
+    <h2 class="mt-3 font-display text-3xl font-600 text-soot-900 sm:text-4xl">Why a sweep means luck</h2>
+    <p class="mt-5 text-lg leading-relaxed text-soot-600">
+      The story goes that a sweep once saved a king from a runaway carriage, and from that day sweeps were declared bringers of good luck. Meeting one on your wedding day — or having one shake your hand and kiss the bride — is said to bless the marriage with happiness and prosperity. It's a warm, memorable touch your guests won't forget.
+    </p>
+  </section>
+
+  <!-- inclusions -->
+  <section class="bg-white border-y border-soot-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+      <div class="max-w-2xl">
+        <p class="text-sm font-600 uppercase tracking-[0.16em] text-ember-600">What's included</p>
+        <h2 class="mt-2 font-display text-3xl font-600 text-soot-900 sm:text-4xl">Your wedding sweep visit</h2>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2">
+        {inclusions.map((i, idx) => (
+          <div class="flex gap-5 rounded-2xl border border-soot-200 bg-cream p-7">
+            <span class="font-display text-4xl font-700 text-ember-500/40">{`0${idx + 1}`}</span>
+            <div>
+              <h3 class="font-display text-xl font-600 text-soot-900">{i.t}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-soot-600">{i.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand heading="Bring a little luck to your big day" sub="Wedding sweep visits book out fast in peak season — get in touch early to secure your date." />
+</Layout>

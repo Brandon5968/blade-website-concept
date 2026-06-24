@@ -1,0 +1,166 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { site } from "../data/site";
+
+const stats = [
+  { value: site.yearsExperience, label: "Years in operation" },
+  { value: "3", label: "Specialist divisions" },
+  { value: "24/7", label: "Emergency call-out" },
+  { value: "100%", label: "Australian & family-run" },
+];
+
+const divisions = [
+  {
+    name: "Industrial",
+    desc: "Stenters, large-scale exhaust systems and process ductwork swept and certified to keep your plant running and compliant.",
+    points: ["Exhaust & extraction systems", "Stenter & oven lines", "Confined-space certified crews"],
+  },
+  {
+    name: "Commercial",
+    desc: "Pizza ovens, commercial kitchen canopies and grease flues cleaned to fire-safety standard, with minimal downtime.",
+    points: ["Kitchen canopy & flue cleaning", "Pizza & bakery ovens", "Fire-compliance reporting"],
+  },
+  {
+    name: "Domestic",
+    desc: "Wood heaters, open fireplaces and flex-duct cleaned tidily and safely — protecting your home from soot, blockages and chimney fires.",
+    points: ["Wood heaters & open fires", "Flex-duct cleaning", "Clean, no-mess service"],
+  },
+];
+
+const reasons = [
+  { title: "Over 30 years on the tools", body: "A family business that has serviced Victorian homes, kitchens and factories for three decades.", icon: "M12 2 3 7v6c0 5 3.5 8 9 9 5.5-1 9-4 9-9V7l-9-5Z" },
+  { title: "Safety-first & fully compliant", body: "WorkSafe confined-space certified, AHHA members and fully insured — every job done by the book.", icon: "M9 12l2 2 4-4M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4Z" },
+  { title: "Tidy, on-time, no surprises", body: "Drop sheets down, dust contained, and a clear quote up front. We treat your property like our own.", icon: "M20 6 9 17l-5-5" },
+  { title: "Always on call", body: "Blocked flue or smoke in the kitchen? Our 24-hour emergency line means help is never far away.", icon: "M12 8v4l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" },
+];
+
+const steps = [
+  { n: "01", t: "Call or request a quote", d: "Tell us the job — home heater, kitchen canopy or industrial line. We'll give you a clear price." },
+  { n: "02", t: "We sweep & inspect", d: "Tidy, contained cleaning plus a safety check of your flue, ducting and fittings." },
+  { n: "03", t: "Certified & sorted", d: "You get a clean system, peace of mind and compliance paperwork where it's needed." },
+];
+---
+
+<Layout>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-soot-950 text-cream">
+    <div class="absolute inset-0 opacity-[0.07]" style="background-image: radial-gradient(circle at 20% 20%, #dd6f24 0, transparent 40%), radial-gradient(circle at 80% 0%, #fff 0, transparent 35%);"></div>
+    <div class="relative mx-auto max-w-6xl px-4 sm:px-6 pt-20 pb-24 sm:pt-28">
+      <div class="max-w-2xl animate-fade-up">
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-500 tracking-wide text-ember-200">
+          <span class="h-1.5 w-1.5 rounded-full bg-ember-400"></span>
+          Serving {site.region} since {site.established}
+        </span>
+        <h1 class="mt-6 font-display text-4xl font-600 leading-[1.05] sm:text-6xl">
+          Clean flues. Safe homes. <span class="text-ember-400">Compliant plants.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-soot-200">
+          {site.name} has swept Victoria's chimneys, kitchen canopies and industrial exhaust systems for over 30 years — tidy, certified and always on call.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href={site.phoneHref} class="inline-flex items-center gap-2 rounded-full bg-ember-500 px-6 py-3.5 font-600 text-soot-950 shadow-lg shadow-ember-900/30 transition hover:bg-ember-400">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.6 1 1 0 0 1-.25 1L6.6 10.8Z"/></svg>
+            Call {site.phone}
+          </a>
+          <a href="/services" class="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3.5 font-600 text-cream transition hover:bg-white/10">
+            See our services
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-soot-300">
+          {site.accreditations.map((a) => (
+            <span class="inline-flex items-center gap-2">
+              <svg class="h-4 w-4 text-ember-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              {a.split(" — ")[0].split(" (")[0]}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- stat strip -->
+    <div class="relative border-t border-white/10 bg-soot-950/60">
+      <div class="mx-auto max-w-6xl grid grid-cols-2 divide-x divide-white/10 sm:grid-cols-4">
+        {stats.map((s) => (
+          <div class="px-4 py-6 text-center">
+            <div class="font-display text-3xl font-600 text-ember-400">{s.value}</div>
+            <div class="mt-1 text-xs uppercase tracking-wide text-soot-400">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Divisions -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+    <div class="max-w-2xl">
+      <p class="text-sm font-600 uppercase tracking-[0.16em] text-ember-600">What we do</p>
+      <h2 class="mt-2 font-display text-3xl font-600 text-soot-900 sm:text-4xl">Three divisions, one trusted crew</h2>
+      <p class="mt-4 text-soot-600">From a single wood heater to an entire factory exhaust line, every job is handled by the same family-run team that's worked Victoria for over 30 years.</p>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {divisions.map((d) => (
+        <article class="group flex flex-col rounded-2xl border border-soot-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-soot-900/5">
+          <h3 class="font-display text-2xl font-600 text-soot-900">{d.name}</h3>
+          <p class="mt-3 flex-1 text-sm leading-relaxed text-soot-600">{d.desc}</p>
+          <ul class="mt-5 space-y-2">
+            {d.points.map((p) => (
+              <li class="flex items-center gap-2.5 text-sm text-soot-700">
+                <svg class="h-4 w-4 shrink-0 text-ember-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                {p}
+              </li>
+            ))}
+          </ul>
+          <a href="/services" class="mt-6 inline-flex items-center gap-1.5 text-sm font-600 text-ember-600 transition group-hover:gap-2.5">
+            Learn more
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="bg-white border-y border-soot-200">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+      <div class="max-w-2xl">
+        <p class="text-sm font-600 uppercase tracking-[0.16em] text-ember-600">Why O'Connor</p>
+        <h2 class="mt-2 font-display text-3xl font-600 text-soot-900 sm:text-4xl">Trades you can actually rely on</h2>
+      </div>
+      <div class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2">
+        {reasons.map((r) => (
+          <div class="flex gap-4">
+            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ember-50 text-ember-600">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={r.icon}/></svg>
+            </span>
+            <div>
+              <h3 class="font-600 text-soot-900">{r.title}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-soot-600">{r.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+    <div class="max-w-2xl">
+      <p class="text-sm font-600 uppercase tracking-[0.16em] text-ember-600">How it works</p>
+      <h2 class="mt-2 font-display text-3xl font-600 text-soot-900 sm:text-4xl">Three simple steps</h2>
+    </div>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {steps.map((s) => (
+        <div class="relative rounded-2xl bg-soot-900 p-7 text-cream">
+          <span class="font-display text-5xl font-700 text-ember-500/30">{s.n}</span>
+          <h3 class="mt-3 font-display text-xl font-600">{s.t}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-soot-300">{s.d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand />
+</Layout>
