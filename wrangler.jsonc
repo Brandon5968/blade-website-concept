@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "blade-website-concept",
+  "compatibility_date": "2026-06-24",
+  // Build the static site before deploying. Cloudflare's Workers Builds runs
+  // `npm install` automatically, then `wrangler deploy` runs this build hook.
+  "build": {
+    "command": "npm run build"
+  },
+  // Serve the Astro output as a static-assets Worker (no server code needed).
+  "assets": {
+    "directory": "./dist"
+  }
+}
