@@ -3,12 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import CtaBand from "../components/CtaBand.astro";
 import { site } from "../data/site";
 
-const photos = [
-  { src: "/images/wedding-1.jpg", alt: "Chimney sweep greeting the bride and groom at a wedding" },
-  { src: "/images/wedding-2.jpg", alt: "Chimney sweep with the bride and groom on their wedding day" },
-  { src: "/images/wedding-3.jpg", alt: "Chimney sweep posing with a married couple outside the church" },
-];
-
 const inclusions = [
   { t: "A real sweep in traditional dress", d: "A genuine working sweep, dressed in traditional 18th century style with brushes and top hat. Not a fancy-dress hire." },
   { t: "The lucky greeting", d: "He shakes the groom's hand and gives the bride the customary kiss, passing on the sweep's luck, health and happiness." },
@@ -77,26 +71,9 @@ const inclusions = [
     </div>
   </section>
 
-  <!-- real wedding photos (small, native resolution) -->
-  <section class="bg-paper border-y border-ink-100">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-      <div class="max-w-2xl">
-        <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-700">Real weddings</p>
-        <h2 class="mt-2 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">Our sweep on the big day</h2>
-      </div>
-      <div class="mt-10 flex flex-wrap justify-center gap-6 sm:justify-start">
-        {photos.map((p) => (
-          <figure class="rotate-[-1deg] rounded-md bg-white p-2 shadow-md ring-1 ring-ink-100 odd:rotate-[1.5deg]">
-            <img src={p.src} alt={p.alt} width="160" height="200" loading="lazy" class="h-50 w-40 rounded-sm object-cover" />
-          </figure>
-        ))}
-      </div>
-      <p class="mt-6 text-xs text-ink-400">Photos from real Victorian weddings. Higher-resolution images to come.</p>
-    </div>
-  </section>
-
   <!-- inclusions -->
-  <section class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
+  <section class="bg-paper border-y border-ink-100">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 py-20">
     <div class="max-w-2xl">
       <p class="text-sm font-700 uppercase tracking-[0.16em] text-green-700">What is included</p>
       <h2 class="mt-2 font-display text-3xl font-700 uppercase tracking-tight text-ink-900 sm:text-4xl">Your wedding sweep visit</h2>
@@ -111,6 +88,7 @@ const inclusions = [
           </div>
         </div>
       ))}
+    </div>
     </div>
   </section>
 
